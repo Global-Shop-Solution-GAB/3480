@@ -1,0 +1,704 @@
+Program.Sub.ScreenSU.Start
+gui.F_ContactList..create
+gui.F_ContactList..caption("Email Quote")
+gui.F_ContactList..size(7395,7455)
+gui.F_ContactList..position(0,0)
+gui.F_ContactList..event(unload,f_contactlist_unload)
+gui.F_ContactList..alwaysontop(False)
+gui.F_ContactList..fontname("Arial")
+gui.F_ContactList..fontsize(8)
+gui.F_ContactList..forecolor(0)
+gui.F_ContactList..fontstyle(,,,,)
+gui.F_ContactList..BackColor(-2147483633)
+gui.F_ContactList..controlbox(True)
+gui.F_ContactList..maxbutton(True)
+gui.F_ContactList..minbutton(True)
+gui.F_ContactList..mousepointer(0)
+gui.F_ContactList..moveable(True)
+gui.F_ContactList..sizeable(True)
+gui.F_ContactList..ShowInTaskBar(True)
+gui.F_ContactList..titlebar(True)
+gui.F_ContactList.lstEmails.create(listbox)
+gui.F_ContactList.lstEmails.visible(True)
+gui.F_ContactList.lstEmails.size(3045,1635)
+gui.F_ContactList.lstEmails.zorder(0)
+gui.F_ContactList.lstEmails.position(4000,500)
+gui.F_ContactList.lstEmails.enabled(True)
+gui.F_ContactList.lstEmails.fontname("Arial")
+gui.F_ContactList.lstEmails.fontsize(8)
+gui.F_ContactList.txtEmail.create(textbox,"",True,3690,300,0,100,1200,True,0,Arial,8,-2147483643,1)
+gui.F_ContactList.cmdAddEmail.create(button)
+gui.F_ContactList.cmdAddEmail.caption("Add Email")
+gui.F_ContactList.cmdAddEmail.visible(True)
+gui.F_ContactList.cmdAddEmail.size(840,375)
+gui.F_ContactList.cmdAddEmail.zorder(0)
+gui.F_ContactList.cmdAddEmail.position(100,2335)
+gui.F_ContactList.cmdAddEmail.enabled(True)
+gui.F_ContactList.cmdAddEmail.fontname("Arial")
+gui.F_ContactList.cmdAddEmail.fontsize(8)
+gui.F_ContactList.cmdAddEmail.event(click,cmdadd_click)
+gui.F_ContactList.cmdRemove.create(button)
+gui.F_ContactList.cmdRemove.caption("Remove")
+gui.F_ContactList.cmdRemove.visible(True)
+gui.F_ContactList.cmdRemove.size(810,375)
+gui.F_ContactList.cmdRemove.zorder(0)
+gui.F_ContactList.cmdRemove.position(3995,2335)
+gui.F_ContactList.cmdRemove.enabled(True)
+gui.F_ContactList.cmdRemove.fontname("Arial")
+gui.F_ContactList.cmdRemove.fontsize(8)
+gui.F_ContactList.cmdRemove.event(click,cmdremove_click)
+gui.F_ContactList.lbl1.create(label,"Choose an existing contact",True,2565,255,1,100,300,True,0,Arial,8,-2147483633,0)
+gui.F_ContactList.lbl2.create(label,"Email Address",True,2850,255,1,100,1000,True,0,Arial,8,-2147483633,0)
+gui.F_ContactList.cmdSend.create(button)
+gui.F_ContactList.cmdSend.caption("Send")
+gui.F_ContactList.cmdSend.visible(True)
+gui.F_ContactList.cmdSend.size(855,360)
+gui.F_ContactList.cmdSend.zorder(0)
+gui.F_ContactList.cmdSend.position(100,6440)
+gui.F_ContactList.cmdSend.enabled(True)
+gui.F_ContactList.cmdSend.fontname("Arial")
+gui.F_ContactList.cmdSend.fontsize(8)
+gui.F_ContactList.cmdSend.event(click,cmdsend_click)
+gui.F_ContactList.mltxtBody.create(textboxm)
+gui.F_ContactList.mltxtBody.text("")
+gui.F_ContactList.mltxtBody.visible(True)
+gui.F_ContactList.mltxtBody.size(6915,2595)
+gui.F_ContactList.mltxtBody.zorder(0)
+gui.F_ContactList.mltxtBody.position(100,3765)
+gui.F_ContactList.mltxtBody.enabled(True)
+gui.F_ContactList.mltxtBody.alignment(0)
+gui.F_ContactList.mltxtBody.fontname("Arial")
+gui.F_ContactList.mltxtBody.fontsize(8)
+gui.F_ContactList.mltxtBody.BackColor(-2147483643)
+gui.F_ContactList.txtSubject.create(textbox,"",True,6930,300,0,85,3075,True,0,Arial,8,-2147483643,1)
+gui.F_ContactList.txtSubject.maxLength(72)
+gui.F_ContactList.lbl3.create(label,"Subject",True,1935,255,1,100,2835,True,0,Arial,8,-2147483633,0)
+gui.F_ContactList.lbl4.create(label,"Body",True,1935,255,1,100,3525,True,0,Arial,8,-2147483633,0)
+gui.F_ContactList.lbl5.create(label,"Recipients",True,1935,255,1,4000,300,True,0,Arial,8,-2147483633,0)
+gui.F_ContactList.txtFax.create(textbox,"",True,3690,300,0,100,1825,True,0,Arial,8,-2147483643,1)
+gui.F_ContactList.lbl6.create(label,"Fax Number",True,1935,255,1,170,1640,True,0,Arial,8,-2147483633,0)
+gui.F_ContactList.txtContact.create(textbox,"",True,3420,300,0,100,555,True,0,Arial,8,-2147483643,1)
+gui.F_ContactList.cmdContactBrowse.create(button)
+gui.F_ContactList.cmdContactBrowse.caption("^")
+gui.F_ContactList.cmdContactBrowse.visible(True)
+gui.F_ContactList.cmdContactBrowse.size(360,300)
+gui.F_ContactList.cmdContactBrowse.zorder(0)
+gui.F_ContactList.cmdContactBrowse.position(3525,555)
+gui.F_ContactList.cmdContactBrowse.enabled(True)
+gui.F_ContactList.cmdContactBrowse.fontname("Arial")
+gui.F_ContactList.cmdContactBrowse.fontsize(8)
+gui.F_ContactList.cmdContactBrowse.event(click,cmdcontactbrowse_click)
+gui.F_ContactList.cmdCancel.create(button)
+gui.F_ContactList.cmdCancel.caption("Cancel")
+gui.F_ContactList.cmdCancel.visible(True)
+gui.F_ContactList.cmdCancel.size(855,360)
+gui.F_ContactList.cmdCancel.zorder(0)
+gui.F_ContactList.cmdCancel.position(6150,6440)
+gui.F_ContactList.cmdCancel.enabled(True)
+gui.F_ContactList.cmdCancel.fontname("Arial")
+gui.F_ContactList.cmdCancel.fontsize(8)
+gui.F_ContactList.cmdCancel.event(click,cmdcancel_click)
+gui.F_ContactList.cmdAddFax.create(button)
+gui.F_ContactList.cmdAddFax.caption("Add Fax")
+gui.F_ContactList.cmdAddFax.visible(True)
+gui.F_ContactList.cmdAddFax.size(855,375)
+gui.F_ContactList.cmdAddFax.zorder(0)
+gui.F_ContactList.cmdAddFax.position(1100,2335)
+gui.F_ContactList.cmdAddFax.enabled(True)
+gui.F_ContactList.cmdAddFax.fontname("Arial")
+gui.F_ContactList.cmdAddFax.fontsize(8)
+gui.F_ContactList.cmdAddFax.event(click,cmdaddfax_click)
+gui.F_ContactList.cmdAddBoth.create(button)
+gui.F_ContactList.cmdAddBoth.caption("Add Both")
+gui.F_ContactList.cmdAddBoth.visible(True)
+gui.F_ContactList.cmdAddBoth.size(855,375)
+gui.F_ContactList.cmdAddBoth.zorder(0)
+gui.F_ContactList.cmdAddBoth.position(2105,2335)
+gui.F_ContactList.cmdAddBoth.enabled(True)
+gui.F_ContactList.cmdAddBoth.fontname("Arial")
+gui.F_ContactList.cmdAddBoth.fontsize(8)
+gui.F_ContactList.cmdAddBoth.event(click,cmdaddboth_click)
+gui.F_ContactList.txtEmail.tabstop(True)
+gui.F_ContactList.txtEmail.tabindex(2)
+gui.F_ContactList.cmdAddEmail.tabstop(True)
+gui.F_ContactList.cmdAddEmail.tabindex(3)
+gui.F_ContactList.lstEmails.tabstop(True)
+gui.F_ContactList.lstEmails.tabindex(4)
+gui.F_ContactList.cmdRemove.tabstop(True)
+gui.F_ContactList.cmdRemove.tabindex(5)
+gui.F_ContactList.txtSubject.tabstop(True)
+gui.F_ContactList.txtSubject.tabindex(6)
+gui.F_ContactList.mltxtBody.tabstop(True)
+gui.F_ContactList.mltxtBody.tabindex(7)
+gui.F_ContactList.cmdSend.tabstop(True)
+gui.F_ContactList.cmdSend.tabindex(8)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sCompNo.Declare(String)
+Variable.Global.sCompType.Declare(String)
+Variable.Global.sList.Declare(String)
+Variable.Global.sQuoteNo.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+'Email Quote .pdf from Quote Header Email button
+'JCT
+'Hook 10850
+V.Local.sError.Declare(String)
+V.Local.sSubj.Declare(String)
+V.Local.sdir.Declare(String)
+V.Local.bExist.Declare(Boolean)
+V.Local.sName.Declare(String)
+V.Local.sSel.Declare(String)
+V.Local.sQuoteNo.Declare(String)
+
+'populate hook to reset text on [Script 1] button
+'F.Intrinsic.Control.If(V.Caller.Hook,=,10710)
+'	V.Passed.000201.Set("Contact Fax")
+'	F.Intrinsic.Control.End
+'F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+
+'[script1] button
+'F.Intrinsic.Control.If(V.Caller.Hook,=,10960)
+'Contact name hook 10821
+
+F.Intrinsic.Control.If(V.Caller.Hook,=,10821)
+	V.Local.sName.Set(V.Passed.000001)
+	F.Intrinsic.String.Trim(V.Local.sName,V.Local.sName)
+
+		F.Intrinsic.String.Concat("select * from V_CONTACT where NAME='",V.Local.sName,"'and CUST='",V.Passed.000006,"'",V.Local.sSel)
+		F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.ssel)
+			F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,False)
+				F.Intrinsic.Control.If(V.ODBC.con!rstA.FieldValTrim!PHONE_T1,=,"1")
+					V.Passed.000073.Set(V.ODBC.con!rstA.FieldValTrim!PHONE1)
+				F.Intrinsic.Control.elseIf(V.ODBC.con!rstA.FieldValTrim!PHONE_T2,=,"1")
+					V.Passed.000073.Set(V.ODBC.con!rstA.FieldValTrim!PHONE2)
+				F.Intrinsic.Control.elseIf(V.ODBC.con!rstA.FieldValTrim!PHONE_T3,=,"1")
+					V.Passed.000073.Set(V.ODBC.con!rstA.FieldValTrim!PHONE3)
+				F.Intrinsic.Control.elseIf(V.ODBC.con!rstA.FieldValTrim!PHONE_T4,=,"1")
+					V.Passed.000073.Set(V.ODBC.con!rstA.FieldValTrim!PHONE4)
+				F.Intrinsic.Control.Else
+					V.Passed.000073.Set(V.ODBC.con!rstA.FieldValTrim!FAX1)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstA.Close
+
+F.Intrinsic.Control.CallSub(F_contactlist_unload)
+F.Intrinsic.Control.EndIf
+
+'email process
+F.Intrinsic.Control.If(V.Caller.Hook,=,10850)
+F.Intrinsic.String.Concat(V.Caller.PluginsDir,"\Quotes",V.Local.sdir)
+F.Intrinsic.File.Exists(V.Local.sdir,V.Local.bExist)
+	F.Intrinsic.Control.If(V.Local.bExist,=,False)
+		F.Intrinsic.File.CreateDir(V.Local.sdir)
+	F.Intrinsic.Control.EndIf
+
+'Get values from GSS
+V.Global.sCompNo.Set(V.Caller.CompanyCode)
+V.Global.sQuoteNo.Set(V.Passed.000003)
+
+
+V.Global.sCompType.Set("C")
+
+'Set override flag
+V.Passed.777777.Set(1)
+'V.Passed.Cancel.Set(1)
+
+V.Global.sList.Redim(-1,-1)
+
+F.Intrinsic.String.LPad(V.Global.sQuoteNo,"0",7,V.Local.sQuoteNo)
+F.Intrinsic.String.Concat("Quote ",V.Local.sQuoteNo,V.Local.sSubj)
+Gui.F_ContactList.txtSubject.Text(V.Local.sSubj)
+Gui.F_ContactList..Show
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+program.sub.cmdadd_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.bFound.Declare(Boolean,False)
+V.Local.sEmail.Declare(String)
+
+V.Local.sEmail.Set(V.Screen.F_ContactList!txtEmail.Text)
+F.Intrinsic.String.Trim(V.Local.sEmail,V.Local.sEmail)
+F.Intrinsic.Control.If(V.Local.sEmail,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+
+'Search for email address in memory array  to avoid duplicates
+F.Intrinsic.Control.For(V.Local.i,0,V.Global.sList.UBound,1)
+	F.Intrinsic.Control.If(V.Screen.F_ContactList!txtEmail.Text,=,V.Global.sList(v.Local.i))
+		V.Local.bFound.Set(True)
+		F.Intrinsic.Control.ExitFor(V.Local.i)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+'If email not found in list, add it to memory array
+F.Intrinsic.Control.If(V.Local.bFound,=,False)
+	F.Intrinsic.Control.If(V.Global.sList.UBound,=,-1)
+		V.Global.sList.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Global.sList.RedimPreserve(1)
+	F.Intrinsic.Control.EndIf
+	V.Global.sList(v.Global.sList.UBound).Set(V.Screen.F_ContactList!txtEmail.Text)
+F.Intrinsic.Control.EndIf
+
+'Fill list from memory array
+F.Intrinsic.Control.CallSub("FillList")
+
+'Clear email selection
+F.Intrinsic.Control.If(V.Screen.F_ContactList!txtContact.Text,=,"")
+	Gui.F_ContactList.txtEmail.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdadd_click.end
+
+program.sub.f_contactlist_unload.start
+F.Intrinsic.Control.SetErrorHandler("f_contactlist_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!con.close
+F.Intrinsic.Control.end
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_contactlist_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.f_contactlist_unload.end
+
+program.sub.cmdremove_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdremove_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.iStart.Declare(Long)
+V.Local.iEnd.Declare(Long)
+V.Local.iTemp.Declare(Long)
+V.Local.bFound.Declare(Boolean)
+
+'Exit if no email selected in list
+F.Intrinsic.Control.If(V.Screen.F_ContactList!lstEmails.Text,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Search memory array for ordinal of selected email
+F.Intrinsic.Control.For(V.Local.iStart,0,V.Global.sList.UBound,1)
+	F.Intrinsic.Control.If(V.Screen.F_ContactList!lstEmails.Text,=,V.Global.sList(v.Local.iStart))
+		V.Local.bFound.Set(True)
+		F.Intrinsic.Control.ExitFor(V.Local.iStart)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iStart)
+
+'Shift memory array to remove selected email
+F.Intrinsic.Math.Sub(V.Global.sList.UBound,1,V.Local.iEnd)
+F.Intrinsic.Control.For(V.Local.i,V.Local.iStart,V.Local.iEnd,1)
+	F.Intrinsic.Math.Add(V.Local.i,1,V.Local.iTemp)
+	V.Global.sList(v.Local.i).set(V.Global.sList(v.Local.iTemp))
+F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.Control.If(V.Global.sList.UBound,=,0)
+	V.Global.sList.Redim(-1,-1)
+F.Intrinsic.Control.else
+	V.Global.sList.RedimPreserve(0,V.Local.iEnd)
+F.Intrinsic.Control.EndIf
+
+'Fill list from memory array
+F.Intrinsic.Control.CallSub("FillList")
+
+'Clear email selection
+
+'Gui.F_ContactList.txtEmail.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdremove_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdremove_click.end
+
+program.sub.cmdsend_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdsend_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sRcptEmail.Declare(String)
+V.Local.sRcptName.Declare(String)
+V.Local.sSenderEmail.Declare(String)
+V.Local.sSenderName.Declare(String)
+V.Local.sAttach.Declare(String)
+V.Local.sParamName.Declare(String)
+V.Local.sParamVal.Declare(String)
+V.Local.sTemp.Declare(String)
+V.Local.sPN.Declare(String)
+V.Local.sPV.Declare(String)
+V.Local.sCallParams.Declare(String)
+V.Local.sdir.Declare(String)
+V.Local.sQuoteNo.Declare(String)
+V.Local.sRequiredParams.Declare(String)
+V.Local.sRetFile.Declare(String)
+V.Local.iBIRUNID.Declare(Long)
+V.Local.iLOGID.Declare(Long)
+V.Local.bFile.Declare(Boolean)
+V.Local.iID.Declare(Long)
+V.Local.sDir.Declare(String)
+V.Local.sFile.Declare(String)
+
+'End script if no emails added to list
+F.Intrinsic.Control.If(V.Global.sList.UBound,=,-1)
+	F.Intrinsic.Control.CallSub("f_contactlist_unload")
+F.Intrinsic.Control.EndIf
+
+V.Local.sRcptName.Set("")
+'Get email address of GS User
+F.Global.Security.GetUserEmail(V.Caller.User,V.Local.sSenderEmail)
+'Alert and end script if no email found for GS User
+F.Intrinsic.control.if(V.Local.sSenderEmail,=,"")
+	F.Intrinsic.UI.Msgbox("Error in email procedure.  The GS User does not have an email address associated with it in User Security Maintenance.")
+	F.Intrinsic.Control.CallSub("f_contactlist_unload")
+F.Intrinsic.control.endif
+'Get full name of GS User
+F.Global.Security.GetFullName(V.Caller.User,V.Local.sSenderName)
+
+'Forming sender email string for QueueMessage
+F.Intrinsic.String.Build("{0}*!*{1}",V.Local.sSenderEmail,V.Local.sSenderName,V.Local.sSenderEmail)
+
+'Set attachment filename and path
+F.Intrinsic.String.Build("{0}\Quotes\",V.Caller.PluginsDir,V.Local.sDir)
+F.Intrinsic.String.Build("{0}.pdf",V.Global.sQuoteNo,V.Local.sFile)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sDir,V.Local.sFile,V.Local.sAttach)
+'String for queue message
+F.Intrinsic.String.Build("{0}*!*{1}",V.Local.sFile,V.Local.sDir,V.Local.sFile)
+
+'Call GS program to build BI table data
+V.Local.sCallParams.Set(V.Global.sQuoteNo)
+F.Global.General.CallWrapperSyncBIO(920000,V.Local.sCallParams)
+
+'Call Quote report
+V.Local.sParamName.Set("Terminal*!*REPORTID*!*REV*!*PRTEXT*!*PRTTOT*!*PRTALL")
+F.Intrinsic.String.Concat(V.caller.Terminal,"*!*000001*!**!**!**!*",V.Local.sParamVal)
+
+'required report params
+V.Local.sRequiredParams.Set("Terminal*!*REPORTID")
+F.Intrinsic.String.Build("{0}\QUOTE_{1}",V.System.Temp,V.Caller.Terminal,V.Local.sRetFile)
+
+'getting run id and log id
+F.Global.BI.GetRunID(V.Local.iBIRUNID)
+F.Global.BI.StartLogging(V.Local.iBIRUNID,1,-1,"",V.Local.iLOGID)
+
+F.Global.BI.RunReportPreProcessor(V.Local.iBIRUNID,V.Local.iLOGID,V.Local.sParamName,V.Local.sParamVal,"",4,True,"",-1,"",0,V.Local.sAttach,"",V.Local.sRequiredParams,V.Local.sRetFile,V.Local.iLOGID)
+
+F.Global.BI.StopLogging(V.Local.iLOGID)
+
+F.Intrinsic.File.Exists(V.Local.sAttach,V.Local.bFile)
+F.Intrinsic.Control.If(V.Local.bFile,=,False)
+	F.Intrinsic.UI.Msgbox("PDF was not created.Please contact Global Shop.")
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+F.Intrinsic.Control.EndIf
+
+'Queueing emails
+F.Intrinsic.Control.For(V.Local.i,0,V.Global.sList.UBound,1)
+	F.Global.Security.getuserID(V.Caller.User,V.Caller.CompanyCode,V.Local.iID)
+	Function.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.local.iID,"",V.Screen.F_ContactList!txtSubject.Text,V.Local.sSenderEmail,V.Global.sList(V.Local.i),V.Screen.F_ContactList!mltxtBody.Text,5,,False,,,,,,,,V.Local.sFile,False)
+F.Intrinsic.Control.Next(V.Local.i)
+
+'End script
+F.Intrinsic.Control.CallSub("f_contactlist_unload")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdsend_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdsend_click.end
+
+Program.Sub.FillList.Start
+F.Intrinsic.Control.SetErrorHandler("FillList_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+
+Gui.F_ContactList.lstEmails.ClearItems
+
+'Fill listbox from memory array
+F.Intrinsic.Control.For(V.Local.i,0,V.Global.sList.UBound,1)
+	Gui.F_ContactList.lstEmails.AddItem(V.Global.sList(v.Local.i))
+F.Intrinsic.Control.Next(V.Local.i)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("FillList_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.FillList.End
+
+program.sub.cmdcontactbrowse_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdcontactbrowse_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSel.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.lWidths.Declare(Long)
+
+F.Intrinsic.String.Split("ID*!*Contact*!*Email*!*Fax","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*2000*!*3000*!*3000","*!*",V.Local.lWidths)
+
+F.Intrinsic.String.Concat("select ID,NAME,EMAIL1,FAX1 from V_CONTACT where CUST='",V.Passed.000006,"'",V.Local.sSel)
+'F.Intrinsic.String.Concat("select ID,NAME,EMAIL1,FAX1 from V_CONTACT where CUST='",123,"'",V.Local.sSel)
+F.Intrinsic.UI.Browser("Contact Email/Fax","con",V.Local.sSel,V.Local.sTitles,V.Local.lWidths,V.Local.sRet)
+'	F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+'		F.Intrinsic.Control.CallSub(F_contactlist_unload)
+'	F.Intrinsic.Control.Else
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.sRet.RedimPreserve(0,3)
+		Gui.F_ContactList.txtContact.Text(V.Local.sRet(1))
+		Gui.F_ContactList.txtEmail.Text(V.Local.sRet(2))
+		Gui.F_ContactList.txtFax.Text(V.Local.sRet(3))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdcontactbrowse_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdcontactbrowse_click.end
+
+program.sub.cmdcancel_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdcancel_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_ContactList.txtContact.Text("")
+Gui.F_ContactList.txtEmail.Text("")
+Gui.F_ContactList.txtFax.Text("")
+Gui.F_ContactList.mltxtBody.Text("")
+Gui.F_ContactList.lstEmails.ClearItems
+
+V.Global.sList.Redim(-1,-1)
+'V.Global.sList.Set("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdcancel_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdcancel_click.end
+
+program.sub.cmdaddfax_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdaddfax_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.bFound.Declare(Boolean,False)
+V.Local.sFax.Declare(String)
+
+V.Local.sFax.Set(V.Screen.F_ContactList!txtFax.Text)
+F.Intrinsic.String.Trim(V.Local.sFax,V.Local.sFax)
+F.Intrinsic.String.StripCharacters(V.Local.sFax,V.Local.sFax)
+F.Intrinsic.Control.If(V.Local.sFax,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat(V.Local.sFax,"@fax.com",V.Local.sFax)
+'Search for email address in memory array  to avoid duplicates
+F.Intrinsic.Control.For(V.Local.i,0,V.Global.sList.UBound,1)
+	F.Intrinsic.Control.If(V.Local.sFax,=,V.Global.sList(v.Local.i))
+		V.Local.bFound.Set(True)
+		F.Intrinsic.Control.ExitFor(V.Local.i)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+'If email not found in list, add it to memory array
+F.Intrinsic.Control.If(V.Local.bFound,=,False)
+	F.Intrinsic.Control.If(V.Global.sList.UBound,=,-1)
+		V.Global.sList.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Global.sList.RedimPreserve(1)
+	F.Intrinsic.Control.EndIf
+	V.Global.sList(v.Global.sList.UBound).Set(V.Local.sFax)
+F.Intrinsic.Control.EndIf
+
+'Fill list from memory array
+F.Intrinsic.Control.CallSub("FillList")
+
+F.Intrinsic.Control.If(V.Screen.F_ContactList!txtContact.Text,=,"")
+	Gui.F_ContactList.txtFax.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdaddfax_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdaddfax_click.end
+
+program.sub.cmdaddboth_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdaddboth_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.bFound.Declare(Boolean,False)
+V.Local.bFaxFound.Declare(Boolean,False)
+V.Local.sEmail.Declare(String)
+
+V.Local.sEmail.Set(V.Screen.F_ContactList!txtEmail.Text)
+F.Intrinsic.String.Trim(V.Local.sEmail,V.Local.sEmail)
+F.Intrinsic.Control.If(V.Local.sEmail,<>,"")
+
+'Search for email address in memory array  to avoid duplicates
+F.Intrinsic.Control.For(V.Local.i,0,V.Global.sList.UBound,1)
+	F.Intrinsic.Control.If(V.Screen.F_ContactList!txtEmail.Text,=,V.Global.sList(v.Local.i))
+		V.Local.bFound.Set(True)
+		F.Intrinsic.Control.ExitFor(V.Local.i)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+'If email not found in list, add it to memory array
+F.Intrinsic.Control.If(V.Local.bFound,=,False)
+	F.Intrinsic.Control.If(V.Global.sList.UBound,=,-1)
+		V.Global.sList.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Global.sList.RedimPreserve(1)
+	F.Intrinsic.Control.EndIf
+	V.Global.sList(v.Global.sList.UBound).Set(V.Screen.F_ContactList!txtEmail.Text)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+V.Local.sFax.Declare(String)
+
+V.Local.sFax.Set(V.Screen.F_ContactList!txtFax.Text)
+F.Intrinsic.String.Trim(V.Local.sFax,V.Local.sFax)
+F.Intrinsic.String.StripCharacters(V.Local.sFax,V.Local.sFax)
+
+V.Local.sFax.Set(V.Screen.F_ContactList!txtFax.Text)
+F.Intrinsic.String.Trim(V.Local.sFax,V.Local.sFax)
+F.Intrinsic.Control.If(V.Local.sFax,<>,"")
+
+F.Intrinsic.String.Concat(V.Local.sFax,"@fax.com",V.Local.sFax)
+'Search for fax in memory array  to avoid duplicates
+F.Intrinsic.Control.For(V.Local.i,0,V.Global.sList.UBound,1)
+	F.Intrinsic.Control.If(V.Local.sFax,=,V.Global.sList(v.Local.i))
+		V.Local.bFaxFound.Set(True)
+		F.Intrinsic.Control.ExitFor(V.Local.i)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+'If fax not found in list, add it to memory array
+F.Intrinsic.Control.If(V.Local.bFaxFound,=,False)
+	F.Intrinsic.Control.If(V.Global.sList.UBound,=,-1)
+		V.Global.sList.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Global.sList.RedimPreserve(1)
+	F.Intrinsic.Control.EndIf
+	V.Global.sList(v.Global.sList.UBound).Set(V.Local.sFax)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+'Fill list from memory array
+F.Intrinsic.Control.If(V.Local.bFaxFound,=,False)
+F.Intrinsic.Control.AndIf(V.Local.bFound,=,False)
+	F.Intrinsic.Control.CallSub("FillList")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_ContactList!txtContact.Text,=,"")
+	Gui.F_ContactList.txtFax.Text("")
+	Gui.F_ContactList.txtEmail.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdaddboth_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Fettes_Quote_PDF.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_contactlist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdaddboth_click.end
+
+
